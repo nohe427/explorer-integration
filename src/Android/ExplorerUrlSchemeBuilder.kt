@@ -125,7 +125,7 @@ class ExplorerUrlSchemeBuilder {
         } else {
             val projectedGeom = GeometryEngine.project(centerPoint, SpatialReferences.getWgs84()) as Point
             this.centerX = projectedGeom.x
-            this.centerX = projectedGeom.y
+            this.centerY = projectedGeom.y
         }
 
         return this
@@ -155,7 +155,7 @@ class ExplorerUrlSchemeBuilder {
             uri.appendQueryParameter(CENTER_PARAM, this.encode(address))
         } else {
             val centerString = StringBuilder().append(centerY).append(",").append(centerX).toString()
-            uri.appendQueryParameter(CENTER_PARAM, this.encode(centerString))
+            uri.appendQueryParameter(CENTER_PARAM, centerString)
         }
 
         uri.appendQueryParameter(ROTATION_PARAM, this.rotation.toString())
