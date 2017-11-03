@@ -176,7 +176,8 @@ class ExplorerUrlSchemeBuilder {
 
         var intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_SUBJECT, "Explorer Map")
-        intent.putExtra(Intent.EXTRA_TEXT, uri);
+        intent.putExtra(Intent.EXTRA_TEXT, uri.toString())
+        intent.type = "text/plain"
 
         return intent
     }
